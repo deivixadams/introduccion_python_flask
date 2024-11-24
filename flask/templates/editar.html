@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarea</title>
+</head>
+<body>
+    <h1>Editar Tarea</h1>
+    <form action="{{ url_for('editar', id=tarea[0]) }}" method="POST">
+        <label for="nombre">Nombre de la Tarea:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ tarea[1] }}" required>
+        <br>
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado">
+            <option value="Pendiente" {% if tarea[2] == "Pendiente" %}selected{% endif %}>Pendiente</option>
+            <option value="Completada" {% if tarea[2] == "Completada" %}selected{% endif %}>Completada</option>
+        </select>
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="{{ url_for('index') }}">Volver a la Lista de Tareas</a>
+</body>
+</html>

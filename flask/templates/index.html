@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Tareas{% endblock %}
+
+{% block content %}
+<h2>Lista de Tareas</h2>
+<ul>
+    {% for tarea in tareas %}
+        <li>
+            {{ tarea[1] }} - <strong>{{ tarea[2] }}</strong>
+            <a class="btn btn-edit" href="{{ url_for('editar', id=tarea[0]) }}">Editar</a>
+            <a class="btn btn-delete" href="{{ url_for('eliminar', id=tarea[0]) }}" onclick="return confirm('¿Estás seguro de eliminar esta tarea?')">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

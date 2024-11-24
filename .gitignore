@@ -1,0 +1,24 @@
+# Entornos virtuales
+venv/
+*.pyc
+__pycache__/
+
+# Archivos temporales de desarrollo
+*.log
+*.sqlite3
+*.db
+*.env
+
+# Configuraciones de IDEs y editores
+.vscode/
+.idea/
+*.swp
+
+# Archivos y carpetas específicos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+flask/tareas.db
+
+META/
